@@ -1,0 +1,8 @@
+fields:
+    name:
+        span: full
+        label: Nombre de la galería
+    images:
+      label: Imágenes
+      type: fileupload
+      mode: image

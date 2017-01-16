@@ -1,0 +1,6 @@
+columns:
+    name:
+        label: Galería
+        type: text
+        searchable: true
+        sorteable: true

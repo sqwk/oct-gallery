@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Gallery
+
+# Model Form Field configuration
+form: $/pollozen/simplegallery/models/gallery/fields.yaml
+
+# Model Class name
+modelClass: PolloZen\SimpleGallery\Models\Gallery
+
+# Default redirect location
+defaultRedirect: pollozen/simplegallery/gallery
+
+# Create page
+create:
+    title: Create Gallery
+    redirect: pollozen/simplegallery/gallery/update/:id
+    redirectClose: pollozen/simplegallery/gallery
+
+# Update page
+update:
+    title: Edit Gallery
+    redirect: pollozen/simplegallery/gallery
+    redirectClose: pollozen/simplegallery/gallery
+
+# Preview page
+preview:
+    title: Preview Gallery

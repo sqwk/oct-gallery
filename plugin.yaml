@@ -1,0 +1,22 @@
+plugin:
+    name: 'pollozen.simplegallery::lang.plugin.name'
+    description: 'pollozen.simplegallery::lang.plugin.description'
+    author: PolloZen
+    icon: oc-icon-picture-o
+    homepage: ''
+permissions:
+    pollozen.simplegallery.manage_galleries:
+        tab: 'pollozen.simplegallery::lang.plugin.name'
+        label: 'Manage Galleries in a simple way'
+navigation:
+    simplegallery:
+        label: 'Gallery'
+        url: pollozen/simplegallery/gallery
+        icon: icon-picture-o
+        permissions:
+            - pollozen.simplegallery.manage_galleries
+        sideMenu:
+            headlines:
+                label: Gallery
+                url: pollozen/simplegallery/gallery
+                icon: icon-picture-o
