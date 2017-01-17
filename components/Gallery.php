@@ -11,8 +11,8 @@ class Gallery extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'Gallery Component',
-            'description' => 'List all the images from the selected gallery'
+            'name'        => 'pollozen.simplegallery::lang.simplecomponent.name',
+            'description' => 'pollozen.simplegallery::lang.simplecomponent.description'
         ];
     }
 

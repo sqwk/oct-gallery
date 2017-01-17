@@ -28,8 +28,10 @@ class Gallery extends Model
         'name' => 'required|between:3,64',
     ];
 
-  public $attachMany = [
-    'images' => ['System\Models\File', 'order' => 'sort_order'],
-  ];
+    public $attachMany = [
+        'images' => ['System\Models\File', 'order' => 'sort_order'],
+    ];
+
+    public $belongsToMany = ['post' => ['RainLab\Blog\Models\Post']];
 
 }

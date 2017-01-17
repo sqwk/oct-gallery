@@ -1,3 +1,4 @@
 1.0.1:
   - First version of SimpleGallery by PolloZen
   - create_galleries_table.php
+  - create_galleries_posts_table.php
