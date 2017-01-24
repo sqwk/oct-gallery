@@ -13,6 +13,12 @@
         'simplecomponent' => [
             'name' => 'Simple Gallery',
             'description' => 'List all the images from the selected gallery without slide show or lightbox'
+        ],
+        'property' =>[
+            'title' => 'Select the gallery',
+            'markuptitle' => 'Gallery style to display',
+            'markupdefault' => 'Use the style included in the component',
+            'markupuser' => 'Use style created by the user'
         ]
 
     ];

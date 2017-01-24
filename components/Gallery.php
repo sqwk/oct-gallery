@@ -6,7 +6,7 @@ use PolloZen\SimpleGallery\Models\Gallery as GalleryModel;
 class Gallery extends ComponentBase
 {
     public $simpleGallery;
-    public $pollo;
+    public $galleryMarkup;
 
     public function componentDetails()
     {
@@ -20,9 +20,18 @@ class Gallery extends ComponentBase
     {
         return [
             'idGallery' => [
-                'title' => 'Gallery Name',
+                'title' => 'pollozen.simplegallery::lang.property.title',
                 'type' => 'dropdown'
             ],
+            'markup' =>[
+                'title' => 'pollozen.simplegallery::lang.property.markuptitle',
+                'type' => 'dropdown',
+                'default' => 'user',
+                'options' => [
+                    'plugin' => 'pollozen.simplegallery::lang.property.markupdefault',
+                    'user' => 'pollozen.simplegallery::lang.property.markupuser'
+                ]
+            ]
         ];
     }
 
@@ -33,6 +42,12 @@ class Gallery extends ComponentBase
     public function onRun(){
         $simpleGallery = new GalleryModel;
         $this->simpleGallery = $simpleGallery->where('id',$this->property('idGallery'))->first();
+        if($this->property('markup')=='plugin'){
+            $this->addJs('/plugins/pollozen/simplegallery/assets/js/owl.awesome.carousel.min.js');
+            $this->addCss('/plugins/pollozen/simplegallery/assets/css/owl.carousel.min.css');
+            $this->addCss('/plugins/pollozen/simplegallery/assets/css/owl.theme.default.min.css');
+        }
+        $this->galleryMarkup = $this->property('markup');
     }
 
 }

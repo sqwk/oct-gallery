@@ -13,6 +13,12 @@
         'simplecomponent' => [
             'name' => 'Galería Simple',
             'description' => 'Lista las imágenes disponibles en la galería sin slide ni lightbox'
+        ],
+        'property' =>[
+            'title' => 'Selecciona la galería',
+            'markuptitle' => 'Estilo de galería a usar',
+            'markupdefault' => 'Usar el estilo incluido en el componente',
+            'markupuser' => 'Usar el estilo creado por el usuario'
         ]
 
     ];
