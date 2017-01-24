@@ -2,6 +2,7 @@
 
 use Flash;
 use Backend\Classes\Controller;
+use PolloZen\SimpleGallery\Models\Gallery as GalleryModel;
 use BackendMenu;
 
 class Gallery extends Controller

@@ -26,6 +26,9 @@ showSetup: true
 # Displays the sorting link on each column
 showSorting: true
 
+# Display Checboxes
+showCheckboxes: true
+
 # Default sorting column
 # defaultSort:
 #     column: created_at

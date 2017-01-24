@@ -2,6 +2,9 @@ fields:
     name:
         span: full
         label: Nombre de la galería
+    description:
+        span: full
+        label: Gallery description
     images:
       label: Imágenes
       type: fileupload

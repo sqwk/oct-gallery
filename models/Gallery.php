@@ -32,6 +32,11 @@ class Gallery extends Model
         'images' => ['System\Models\File', 'order' => 'sort_order'],
     ];
 
-    public $belongsToMany = ['post' => ['RainLab\Blog\Models\Post']];
+    public $belongsToMany = [
+        'post' => [
+            'RainLab\Blog\Models\Post',
+            'table' => 'pollozen_simplegallery_galleries_posts'
+            ]
+        ];
 
 }

@@ -4,3 +4,13 @@ columns:
         type: text
         searchable: true
         sorteable: true
+    description:
+        label: Descripción
+        type: text
+        searchable: true
+        sorteable: true
+    created_at:
+        label: Creada
+        type: datetime
+        searchable: true
+        sorteable: true
