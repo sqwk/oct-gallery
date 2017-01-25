@@ -1,3 +1,20 @@
-<p>This is the default markup for component Gallery</p>
-
-<small>You can delete this file if you want</small>
+{% set markup = __SELF__.galleryMarkup %}
+{% set gallery = __SELF__.simpleGallery %}
+{% if markup == "plugin" %}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="gallery-container">
+					<h3>{{gallery.name}}</h3><br/>
+					<div class="gallery_in_post owl-carousel owl-theme">
+						{% for image in gallery.images %}
+						<div class="item">
+							<img title="{{image.title}}" src="{{ image.path }}" alt="">
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{%endif%}

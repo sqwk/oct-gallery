@@ -40,14 +40,14 @@ class Gallery extends ComponentBase
     }
 
     public function onRun(){
-        $simpleGallery = new GalleryModel;
-        $this->simpleGallery = $simpleGallery->where('id',$this->property('idGallery'))->first();
         if($this->property('markup')=='plugin'){
-            $this->addJs('/plugins/pollozen/simplegallery/assets/js/owl.awesome.carousel.min.js');
             $this->addCss('/plugins/pollozen/simplegallery/assets/css/owl.carousel.min.css');
             $this->addCss('/plugins/pollozen/simplegallery/assets/css/owl.theme.default.min.css');
+            $this->addJs('/plugins/pollozen/simplegallery/assets/js/owl.awesome.carousel.min.js');
+            $this->addJs('/plugins/pollozen/simplegallery/assets/js/pz.js');
         }
+        $simpleGallery = new GalleryModel;
+        $this->simpleGallery = $simpleGallery->where('id',$this->property('idGallery'))->first();
         $this->galleryMarkup = $this->property('markup');
     }
-
 }

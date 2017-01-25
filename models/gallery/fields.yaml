@@ -1,11 +1,11 @@
 fields:
     name:
         span: full
-        label: Nombre de la galería
+        label: pollozen.simplegallery::lang.column.name
     description:
         span: full
-        label: Gallery description
+        label: pollozen.simplegallery::lang.column.description
     images:
-      label: Imágenes
+      label: pollozen.simplegallery::lang.column.images
       type: fileupload
       mode: image

@@ -4,8 +4,8 @@
         'plugin' => [
             'name'        => 'Simple Awesome Gallery',
             'description' => 'Gallery associated to RainLab Blog',
+            'permission' => 'Manage Galleries in a easy way'
         ],
-
         'form' => [
             'label' => 'Select one or more galleries for attach to the post ',
             'tab' => 'Galleries'
@@ -19,8 +19,12 @@
             'markuptitle' => 'Gallery style to display',
             'markupdefault' => 'Use the style included in the component',
             'markupuser' => 'Use style created by the user'
+        ],
+        'column' => [
+            'name' => 'Gallery name',
+            'description' => 'Description',
+            'created' => 'Created',
+            'images' => 'Images'
         ]
-
     ];
-
 ?>

@@ -1,16 +1,16 @@
 columns:
     name:
-        label: Galería
+        label: pollozen.simplegallery::lang.column.name
         type: text
         searchable: true
         sorteable: true
     description:
-        label: Descripción
+        label: pollozen.simplegallery::lang.column.description
         type: text
         searchable: true
         sorteable: true
     created_at:
-        label: Creada
+        label: pollozen.simplegallery::lang.column.created
         type: datetime
         searchable: true
         sorteable: true

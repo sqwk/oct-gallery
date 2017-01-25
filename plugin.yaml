@@ -7,7 +7,7 @@ plugin:
 permissions:
     pollozen.simplegallery.manage_galleries:
         tab: 'pollozen.simplegallery::lang.plugin.name'
-        label: 'Manage Galleries in a simple way'
+        label: 'pollozen.simplegallery::lang.plugin.permission'
 navigation:
     simplegallery:
         label: 'Gallery'
