@@ -10,7 +10,7 @@
 <a name="introduction"></a>
 ## Introduction
 
-Create galleries in the most simple way. The plugin storages the gallery as a single item, so, you can call the gallery for display it wherever you want in your website or if you need, you can link one or more galleries to a blog publication (just Rain Lab Blog) and the gallery will be available in ```post.galery``` objet
+Create galleries in the most simple way. The plugin storages the gallery as a single item, so, you can call the gallery for display it wherever you want in your website or if you need, you can link one or more galleries to a blog publication (just RainLab Blog) and the gallery will be available in ```post.galery``` objet
 
 <a name="creategalleries"></a>
 ## Create Galleries
@@ -108,3 +108,5 @@ To do this, just go to edit your blog and find the **Galleries** tab. There you 
 ##Help and support
 
 If you find some bugs or have questions, you can leave a message in the forum :D
+
+
