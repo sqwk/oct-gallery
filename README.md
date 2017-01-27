@@ -1,4 +1,4 @@
-# Gallery with integration to RainLab Blog
+# Gallery with integration to [RainLab Blog](https://octobercms.com/plugin/rainlab-blog)
 
 - [Introduction](#introduction)
 - [Create Galleries](#creategalleries)
@@ -10,7 +10,7 @@
 <a name="introduction"></a>
 ## Introduction
 
-Create galleries in the most simple way. The plugin storages the gallery as a single item, so, you can call the gallery for display it wherever you want in your website or if you need, you can link one or more galleries to a blog publication (just RainLab Blog) and the gallery will be available in ```post.galery``` objet
+Create galleries in the most simple way. The plugin storages the gallery as a single item, so you can call the gallery to display it wherever you want in your website or if you need, you can link one or more galleries to a blog publication (just [RainLab Blog](https://octobercms.com/plugin/rainlab-blog)) and the gallery will be available in ```post.galery``` object
 
 <a name="creategalleries"></a>
 ## Create Galleries
@@ -21,11 +21,11 @@ Create galleries in the most simple way. The plugin storages the gallery as a si
 - Drag and drop all the images you want and...
 - Save it!
 
-As pretty easy like that. Now, you have a gallery. It's time to use it.
+As easy as that. Now, you have a gallery. It's time to use it.
 
 <a name="displayown"></a>
 ## Display gallery with your own style
-For do this, just include the gallery component in your page/partial.
+To do this, just include the gallery component in your page/partial.
 
 Choose the gallery you want to display and select **Use style created by the user** in the Gallery style to display option
 
@@ -61,7 +61,7 @@ markup = "user"
 <a name="displaycomponent"></a>
 ##Display gallery with the component included
 
-For do this, just include the gallery component in your page/partial.
+To do this, just include the gallery component in your page/partial.
 
 Choose the gallery you want to display and select **Use the style included in the component** in the Gallery style to display option
 
@@ -73,13 +73,13 @@ This will inject the next scripts
 - Owl Carousel (Js and CSS)
 - pz.js - Scritp for initialize the gallery carousel
 
-Use this option just in an emergency, because doesn't have to many style and maybe the carousel is not what you need. I recommend you use the "own style" option because offers to you more flexibility.
+Use this option just in an emergency, because it doesn't have too many styles and maybe the carousel is not what you need. I recommend you use the "own style" option because it offers you more flexibility.
 
 
 <a name="gallerypost"></a>
 ##Linking a gallery to a blog post and display it
 
-Once you have a gallery created, you can link it to a Blog Post (RainLab Blog).
+Once you have a gallery created, you can link it to a Blog Post ([RainLab Blog](https://octobercms.com/plugin/rainlab-blog)).
 
 To do this, just go to edit your blog and find the **Galleries** tab. There you will see all the galleries created, choose one (or many, it's your call) and save it.
 
@@ -107,6 +107,4 @@ To do this, just go to edit your blog and find the **Galleries** tab. There you 
 <a name="support"></a>
 ##Help and support
 
-If you find some bugs or have questions, you can leave a message in the forum :D
-
-
+If you find some bugs or have questions, you can leave a message in the forum or [GitHub](https://github.com/sanPuerquitoProgramador/simple-awesome-gallery)
