@@ -2,6 +2,7 @@
 
 - [Introduction](#introduction)
 - [Create Galleries](#creategalleries)
+- [Display a list of available Galleries](#gallerieslist)
 - [Display gallery with your own style](#displayown)
 - [Display gallery with component included](#displaycomponent)
 - [Link gallery to post (and display it)](#gallerypost)
@@ -22,6 +23,42 @@ Create galleries in the most simple way. The plugin storages the gallery as a si
 - Save it!
 
 As easy as that. Now, you have a gallery. It's time to use it.
+
+<a name="gallerieslist"></a>
+## Galleries List
+You can create a Galleries Page using this component. Just include the Galleries component
+
+```
+[Galleries]
+galleryOrder = "random"
+results = 10
+galleryPage = "gallery"
+==
+```
+The component inject the the `galleries` object which contains all the galleries available.
+
+Use a foreach loop to access each gallery with it's propertys.
+
+`gallery.images` All the images in the gallery
+
+`gallery.image[0].path` The path to the image 0 in the gallery (good for the thumbnail)
+
+`gallery.url` The url to the gallery page
+
+Here is an example to create a galleries index
+```
+
+{% for gallery in galleries %}
+  <div class="item">
+    <figure">
+      <img src="{{ gallery.images[0].path }}" alt="{{gallery.name}}" />
+      <h3>{{gallery.name}}</h3>
+      <a href="{{gallery.url}}"></a>
+    </figure>
+  </div>
+{% endfor %}
+
+```
 
 <a name="displayown"></a>
 ## Display a gallery with your own style
