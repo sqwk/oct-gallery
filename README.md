@@ -24,31 +24,32 @@ Create galleries in the most simple way. The plugin storages the gallery as a si
 As easy as that. Now, you have a gallery. It's time to use it.
 
 <a name="displayown"></a>
-## Display gallery with your own style
+## Display a gallery with your own style
 To do this, just include the gallery component in your page/partial.
 
-Choose the gallery you want to display and select **Use style created by the user** in the Gallery style to display option
+Select the gallery you want to display using the gallery name or the slug parameter and select **Use style created by the user** in the Gallery style to display option
 
-Then the plugin will inject the following variables
+Then the plugin will inject the following object
 
-	Gallery.simpleGallery
+	gallery
 
 And the images will be in
 
-	Gallery.simpleGallery.images
+	gallery.images
 
 So, you can use it like this (using your own structure and styles of course, that's the idea...)
 
 ```
 [Gallery]
-idGallery = 1
+idGallery = 0
 markup = "user"
+slug = "{{ :slug }}"
 ==
 <div class="wrapper">
-	<h3>{{Gallery.simpleGallery.name}}</h3>
+	<h3>{{gallery.name}}</h3>
 	<div class="cp-sidebar-content gallery">
 		<ul>
-		{% for image in Gallery.simpleGallery.images %}
+		{% for image in gallery.images %}
 			<li>
 			<img title="{{image.title}}" alt="{{image.description}}" src="{{ image.path }}"></a>
 			</li>
