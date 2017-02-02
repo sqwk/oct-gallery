@@ -13,8 +13,8 @@ class Galleries extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'pollozen.simplegallery::lang.listcomponent.name',
-            'description' => 'pollozen.simplegallery::lang.listcomponent.description'
+            'name'        => 'pollozen.simplegallery::lang.galleriescomponent.name',
+            'description' => 'pollozen.simplegallery::lang.galleriescomponent.description'
         ];
     }
 
@@ -22,26 +22,26 @@ class Galleries extends ComponentBase
     {
         return [
             'galleryOrder' => [
-                'title'         => 'Gallery order',
-                'description'   => 'Attribute in wich the galleries should be orderer',
+                'title'         => 'pollozen.simplegallery::lang.galleriescomponent.property.order',
+                'description'   => 'pollozen.simplegallery::lang.galleriescomponent.property.orderDescription',
                 'type'          => 'dropdown',
                 'options'   => [
-                    'idDesc'    => 'Newers first',
-                    'idAsc'     => 'Newers last',
-                    'nameDesc'  => 'By name, desc',
-                    'nameAsc'   => 'By name, asc',
-                    'random'    => 'Randomize'
+                    'idDesc'    => 'pollozen.simplegallery::lang.galleriescomponent.property.orderIddesc',
+                    'idAsc'     => 'pollozen.simplegallery::lang.galleriescomponent.property.orderIdasc',
+                    'nameDesc'  => 'pollozen.simplegallery::lang.galleriescomponent.property.orderNamedesc',
+                    'nameAsc'   => 'pollozen.simplegallery::lang.galleriescomponent.property.orderNameasc',
+                    'random'    => 'pollozen.simplegallery::lang.galleriescomponent.property.orderRandom'
                 ],
                 'default' => 'random'
             ],
             'results' =>[
-                'title' => 'Results per page',
+                'title' => 'pollozen.simplegallery::lang.galleriescomponent.property.results',
                 'type' => 'string',
                 'default' => '10'
             ],
             'galleryPage' => [
-                'title'         => 'Gallery page',
-                'description'   => 'Page where the gallery is displayed',
+                'title'         => 'pollozen.simplegallery::lang.galleriescomponent.property.page',
+                'description'   => 'pollozen.simplegallery::lang.galleriescomponent.property.pageDescription',
                 'default'       => '/galleries',
                 'type'          => 'dropdown',
                 'group'         => 'Links'

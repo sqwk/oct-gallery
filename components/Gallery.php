@@ -11,8 +11,8 @@ class Gallery extends ComponentBase
     public function componentDetails()
     {
         return [
-            'name'        => 'pollozen.simplegallery::lang.simplecomponent.name',
-            'description' => 'pollozen.simplegallery::lang.simplecomponent.description'
+            'name'        => 'pollozen.simplegallery::lang.gallerycomponent.name',
+            'description' => 'pollozen.simplegallery::lang.gallerycomponent.description'
         ];
     }
 
@@ -20,24 +20,25 @@ class Gallery extends ComponentBase
     {
         return [
             'idGallery' => [
-                'title'         => 'pollozen.simplegallery::lang.property.title',
-                'description'   => 'pollozen.simplegallery::lang.property.titleDescription',
+                'title'         => 'pollozen.simplegallery::lang.gallerycomponent.property.gallery',
+                'description'   => 'pollozen.simplegallery::lang.gallerycomponent.property.galleryDescription',
                 'type'          => 'dropdown',
                 'showExternalParam' => false
             ],
             'markup' =>[
-                'title'         => 'pollozen.simplegallery::lang.property.markuptitle',
+                'title'         => 'pollozen.simplegallery::lang.gallerycomponent.property.style',
+                'description'   => 'pollozen.simplegallery::lang.gallerycomponent.property.styleDescription',
                 'type'          => 'dropdown',
                 'default'       => 'user',
                 'options' => [
-                    'plugin'    => 'pollozen.simplegallery::lang.property.markupdefault',
-                    'user'      => 'pollozen.simplegallery::lang.property.markupuser'
+                    'plugin'    => 'pollozen.simplegallery::lang.gallerycomponent.property.styleComponent',
+                    'user'      => 'pollozen.simplegallery::lang.gallerycomponent.property.styleUser'
                 ],
                 'showExternalParam' => false
             ],
             'slug'  =>[
-                'title' => 'pollozen.simplegallery::lang.property.slug',
-                'description' => 'pollozen.simplegallery::lang.property.slugDescription',
+                'title' => 'pollozen.simplegallery::lang.gallerycomponent.property.slug',
+                'description' => 'pollozen.simplegallery::lang.gallerycomponent.property.slugDescription',
                 'type' => 'string',
                 'default' => '{{ :slug }}'
             ]
