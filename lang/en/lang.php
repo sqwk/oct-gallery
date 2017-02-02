@@ -37,7 +37,11 @@
                 'orderRandom' => 'Randomize',
                 'results' => 'Results per page',
                 'page' => 'Gallery page',
-                'pageDescription' => 'Page where a single gallery will be displayed. This attribute is used for create a link to the gallery'
+                'pageDescription' => 'Page where a single gallery will be displayed. This attribute is used for create a link to the gallery',
+                'style' => 'Gallery style',
+                'styleComponent' => 'Use the style included in the component',
+                'styleUser' => 'Use style created by the user',
+                'styleDescription' => 'The style included in the component will use isotope library'
             ]
         ],
         'column' => [

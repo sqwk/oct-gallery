@@ -9,6 +9,7 @@ class Galleries extends ComponentBase
 {
     public $galleries;
     public $galleryPage;
+    public $galleryMarkup;
 
     public function componentDetails()
     {
@@ -39,6 +40,17 @@ class Galleries extends ComponentBase
                 'type' => 'string',
                 'default' => '10'
             ],
+            'markup' =>[
+                'title'         => 'pollozen.simplegallery::lang.gallerycomponent.property.style',
+                'description'   => 'pollozen.simplegallery::lang.gallerycomponent.property.styleDescription',
+                'type'          => 'dropdown',
+                'default'       => 'user',
+                'options' => [
+                    'plugin'    => 'pollozen.simplegallery::lang.gallerycomponent.property.styleComponent',
+                    'user'      => 'pollozen.simplegallery::lang.gallerycomponent.property.styleUser'
+                ],
+            'showExternalParam' => false
+            ],
             'galleryPage' => [
                 'title'         => 'pollozen.simplegallery::lang.galleriescomponent.property.page',
                 'description'   => 'pollozen.simplegallery::lang.galleriescomponent.property.pageDescription',
@@ -60,6 +72,7 @@ class Galleries extends ComponentBase
 
     public function onRun(){
         $this->prepareVars();
+        $this->prepareMarkup();
         $this->galleries = $this->page['galleries'] = $this->listGalleries();
     }
 
@@ -114,6 +127,16 @@ class Galleries extends ComponentBase
         });
 
         return $galleries;
+    }
+    private function prepareMarkup(){
+        $this->galleryMarkup = $this->property('markup');
+        if($this->property('markup')=='plugin'){
+            $this->addCss('/plugins/pollozen/simplegallery/assets/css/galleries.css');
+            $this->addJs('/plugins/pollozen/simplegallery/assets/js/imagesloaded.pkgd.min.js');
+            $this->addJs('/plugins/pollozen/simplegallery/assets/js/isotope.pkgd.min.js');
+            $this->addJs('/plugins/pollozen/simplegallery/assets/js/isotope.pkgd.min.js');
+            $this->addJs('/plugins/pollozen/simplegallery/assets/js/pz.js');
+        }
     }
 
 }

@@ -1,0 +1,143 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:200,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i');
+@import url(http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+
+.toGallery {
+  font-family: 'Nunito', Arial, sans-serif;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin: 8px;
+  min-width: 230px;
+  max-width: 315px;
+  width: 100%;
+  color: #000000;
+  font-size: 16px;
+  line-height: 1.2em;
+  text-align: center;
+  font-weight: 300;
+}
+
+.toGallery *,
+.toGallery *:before,
+.toGallery *:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.65s ease;
+  transition: all 0.65s ease;
+}
+
+.toGallery:after {
+  -webkit-transition: all 0.65s ease;
+  transition: all 0.65s ease;
+  position: absolute;
+  height: 0px;
+  width: 0px;
+  bottom: -478px;
+  right: -478px;
+  border-radius: 50%;
+  border: 500px solid transparent;
+  border-bottom-color: #000000;
+  border-right-color: #000000;
+  content: '';
+  opacity: 0.8;
+}
+
+.toGallery img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.toGallery i {
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  border-radius: 50%;
+  color: #000000;
+  display: block;
+  z-index: 10;
+}
+
+.toGallery i:before,
+.toGallery i:after {
+  border-radius: 50%;
+}
+
+.toGallery i:before {
+  color: #ddd;
+  background-color: #fff;
+  font-size: 37.64705882px;
+  line-height: 64px;
+  text-align: center;
+  width: 64px;
+}
+
+.toGallery i:after {
+  position: absolute;
+  top: -14px;
+  bottom: -14px;
+  left: -14px;
+  right: -14px;
+  border: 15px solid #ddd;
+  border-bottom-color: #2980b9;
+  border-right-color: #2980b9;
+  content: '';
+  z-index: -2;
+  box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.toGallery i:hover {
+  background-color: #D2B17F;
+  cursor: pointer;
+}
+
+.toGallery h3 {
+  top: 5px;
+  color: #fff;
+  letter-spacing: 2px;
+  margin: 0;
+  opacity: 0;
+  padding: 10px 15px;
+  position: absolute;
+  left: 0;
+  text-transform: uppercase;
+  z-index: 3;
+}
+
+.toGallery a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+}
+
+.toGallery:hover:after,
+.toGallery.hover:after {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.toGallery:hover img,
+.toGallery.hover img {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.toGallery:hover i:before,
+.toGallery.hover i:before {
+  color: #2980b9;
+}
+
+.toGallery:hover i:after,
+.toGallery.hover i:after {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.toGallery:hover h3,
+.toGallery.hover h3 {
+  opacity: 1;
+}

@@ -28,4 +28,24 @@ $(document).ready(function() {
             social_tools: false
         });
     }
+
+    /*  ISOTOPE */
+    if($('.cp-gallery-masonry .isotope').length){
+        var $galleryContainer = $('.cp-gallery-masonry .isotope');
+        $galleryContainer.hide();
+        $galleryContainer.imagesLoaded(function(){
+            $galleryContainer.fadeIn().isotope({
+                itemSelector: '.item',
+                transitionDuration: '0.6s',
+                masonry: {
+                    columnWidth: $galleryContainer.width() / 12
+                },
+                layoutMode: 'masonry'
+            });
+            var $items = $galleryContainer.find('.item');
+            $galleryContainer.addClass('is-showing-items')
+            .isotope( 'revealItemElements', $items );
+        });
+    }
+    /*  ISOTOPE */
 });
