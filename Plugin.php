@@ -37,6 +37,7 @@ class Plugin extends PluginBase
     public function registerComponents(){
         return [
             'PolloZen\SimpleGallery\Components\Gallery' => 'Gallery',
+            'PolloZen\SimpleGallery\Components\Galleries' => 'Galleries',
         ];
     }
 

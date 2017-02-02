@@ -39,4 +39,12 @@ class Gallery extends Model
             ]
         ];
 
+    public function setUrl($pageName, $controller)
+    {
+        $params = [
+            'id' => $this->id,
+            'slug' => $this->slug
+        ];
+        return $this->url = $controller->pageUrl($pageName,$params);
+    }
 }

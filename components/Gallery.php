@@ -5,7 +5,7 @@ use PolloZen\SimpleGallery\Models\Gallery as GalleryModel;
 
 class Gallery extends ComponentBase
 {
-    public $simpleGallery;
+    public $gallery;
     public $galleryMarkup;
 
     public function componentDetails()
@@ -20,34 +20,57 @@ class Gallery extends ComponentBase
     {
         return [
             'idGallery' => [
-                'title' => 'pollozen.simplegallery::lang.property.title',
-                'type' => 'dropdown'
+                'title'         => 'pollozen.simplegallery::lang.property.title',
+                'description'   => 'pollozen.simplegallery::lang.property.titleDescription',
+                'type'          => 'dropdown',
+                'showExternalParam' => false
             ],
             'markup' =>[
-                'title' => 'pollozen.simplegallery::lang.property.markuptitle',
-                'type' => 'dropdown',
-                'default' => 'user',
+                'title'         => 'pollozen.simplegallery::lang.property.markuptitle',
+                'type'          => 'dropdown',
+                'default'       => 'user',
                 'options' => [
-                    'plugin' => 'pollozen.simplegallery::lang.property.markupdefault',
-                    'user' => 'pollozen.simplegallery::lang.property.markupuser'
-                ]
+                    'plugin'    => 'pollozen.simplegallery::lang.property.markupdefault',
+                    'user'      => 'pollozen.simplegallery::lang.property.markupuser'
+                ],
+                'showExternalParam' => false
+            ],
+            'slug'  =>[
+                'title' => 'pollozen.simplegallery::lang.property.slug',
+                'description' => 'pollozen.simplegallery::lang.property.slugDescription',
+                'type' => 'string',
+                'default' => '{{ :slug }}'
             ]
         ];
     }
 
     public function getidGalleryOptions(){
-        return GalleryModel::select('id','name')->orderBy('name')->get()->lists('name','id');
+        return array(0 => 'Using gallery slug') + GalleryModel::select('slug','name')->orderBy('name')->get()->lists('name','slug');
     }
 
     public function onRun(){
+        $this->prepareMarkup();
+        $this->gallery = $this->page['gallery'] = $this->getGallery();
+    }
+
+
+
+    private function prepareMarkup(){
+        $this->galleryMarkup = $this->property('markup');
         if($this->property('markup')=='plugin'){
             $this->addCss('/plugins/pollozen/simplegallery/assets/css/owl.carousel.min.css');
             $this->addCss('/plugins/pollozen/simplegallery/assets/css/owl.theme.default.min.css');
             $this->addJs('/plugins/pollozen/simplegallery/assets/js/owl.awesome.carousel.min.js');
             $this->addJs('/plugins/pollozen/simplegallery/assets/js/pz.js');
         }
-        $simpleGallery = new GalleryModel;
-        $this->simpleGallery = $simpleGallery->where('id',$this->property('idGallery'))->first();
-        $this->galleryMarkup = $this->property('markup');
     }
+
+    protected function getGallery(){
+        $slug  = ($this->property('idGallery') == '0' ) ? $this->property('slug'): $this->property('idGallery');
+        $query = new GalleryModel;
+        $query->where('slug',$slug);
+        $gallery = $query->first();
+        return $gallery;
+    }
+
 }

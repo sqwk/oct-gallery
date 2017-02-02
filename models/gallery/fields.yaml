@@ -1,7 +1,13 @@
 fields:
     name:
-        span: full
+        span: auto
         label: pollozen.simplegallery::lang.column.name
+        required: true
+    slug:
+        span: auto
+        label: Slug
+        preset: name
+        required: true
     description:
         span: full
         label: pollozen.simplegallery::lang.column.description
