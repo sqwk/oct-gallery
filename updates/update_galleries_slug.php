@@ -13,7 +13,7 @@ class UpdateGalleriesSlug extends Migration
             return;
         }
         Schema::table('pollozen_simplegallery_galleries', function($table){
-            $table->string('slug');
+            $table->string('slug')->nullable();
         });
         $galleries = Gallery::all();
         foreach($galleries as $gallery) {
