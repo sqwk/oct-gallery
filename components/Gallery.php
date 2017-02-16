@@ -68,8 +68,7 @@ class Gallery extends ComponentBase
 
     protected function getGallery(){
         $slug  = ($this->property('idGallery') == '0') ? $this->property('slug') : $this->property('idGallery');
-        $field = ($this->property('idGallery') == '0') ? 'slug' : 'id';
-        $query = GalleryModel::where($field,$slug);
+        $query = GalleryModel::where('slug',$slug);
         $gallery = $query->first();
         return $gallery;
     }
