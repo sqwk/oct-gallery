@@ -41,6 +41,18 @@ class Plugin extends PluginBase
         ];
     }
 
+    /**
+     * Registers any form widgets for use in backend
+     *
+     * @return array
+     */
+    public function registerFormWidgets()
+    {
+        return [
+            'Pollozen\Simplegallery\FormWidgets\Gallery' => 'gallery',
+        ];
+    }
+
     public function boot(){
         PostModel::extend(function($model){
             $model->belongsToMany['gallery'] = [
