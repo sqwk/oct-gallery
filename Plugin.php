@@ -10,7 +10,7 @@ use RainLab\Blog\Models\Post as PostModel;
  */
 class Plugin extends PluginBase
 {
-    public $require = ['RainLab.Blog'];
+    public $require = [];
 
     public function registerSettings(){
     }
