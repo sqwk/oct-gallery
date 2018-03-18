@@ -41,6 +41,19 @@ class Plugin extends PluginBase
         ];
     }
 
+    /**
+     * Registers any front-end components implemented in this plugin as snippets for the static pages plugin.
+     *
+     * @return array
+     */
+    public function registerPageSnippets()
+    {
+        return [
+            'PolloZen\SimpleGallery\Components\Gallery' => 'Gallery',
+            'PolloZen\SimpleGallery\Components\Galleries' => 'Galleries',
+        ];
+    }
+
     public function boot(){
         PostModel::extend(function($model){
             $model->belongsToMany['gallery'] = [
