@@ -1,6 +1,7 @@
 <?php namespace PolloZen\SimpleGallery\Models;
 
 use Model;
+use System\Classes\PluginManager;
 
 /**
  * Gallery Model
@@ -32,12 +33,18 @@ class Gallery extends Model
         'images' => ['System\Models\File', 'order' => 'sort_order'],
     ];
 
-    public $belongsToMany = [
-        'post' => [
-            'RainLab\Blog\Models\Post',
-            'table' => 'pollozen_simplegallery_galleries_posts'
-            ]
-        ];
+    public $belongsToMany = [];
+
+    public function __construct(array $attributes = [])
+    {
+        if (PluginManager::instance()->hasPlugin('RainLab.Blog')) {
+            $this->belongsToMany['post'] = [
+                'RainLab\Blog\Models\Post',
+                'table' => 'pollozen_simplegallery_galleries_posts'
+            ];
+        }
+        parent::__construct($attributes);
+    }
 
     public function setUrl($pageName, $controller)
     {
