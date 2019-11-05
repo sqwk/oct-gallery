@@ -1,148 +1,76 @@
-# Gallery with integration to [RainLab Blog](https://octobercms.com/plugin/rainlab-blog)
+# Simple Gallery
 
 - [Introduction](#introduction)
-- [Create Galleries](#creategalleries)
-- [Display a list of available Galleries](#gallerieslist)
-- [Display gallery with your own style](#displayown)
-- [Display gallery with component included](#displaycomponent)
-- [Link gallery to post (and display it)](#gallerypost)
-- [Help - Support](#support)
+- [Create galleries](#creategalleries)
+- [Display a gallery](#displaygallery)
+- [Display a list of available galleries](#displaygallerieslist)
+- [Future features](#futurefeatures)
+- [Help & support](#support)
 
 <a name="introduction"></a>
 ## Introduction
 
-Create galleries in the most simple way. The plugin storages the gallery as a single item, so you can call the gallery to display it wherever you want in your website or if you need, you can link one or more galleries to a blog publication (just [RainLab Blog](https://octobercms.com/plugin/rainlab-blog)) and the gallery will be available in ```post.galery``` object
+* Admin UI for managing galleries and reordering images
+* Gallery snippets for manual placement inside CMS and [static](https://octobercms.com/plugin/rainlab-pages) pages
+* Link one or more galleries to a [blog post](https://octobercms.com/plugin/rainlab-blog)
+* Form widget for use in custom layouts
+
+This plugin is largely based on [SimpleGallery by PolloZen](https://octobercms.com/plugin/pollozen-simplegallery).
+
+This plugin does NOT include any CSS or Javascript, leaving any styling and animation up to the developer. The plugin renders clean unordered lists unless overriden.
 
 <a name="creategalleries"></a>
 ## Create Galleries
 
-- Just go to "Galleries Menu"
-- Clic on New Gallery
-- Write a name for the gallery and, if you want, a description
-- Drag and drop all the images you want and...
+- CLick on the "Galleries" option inside the main menu.
+- Click on "New Gallery"
+- Name the gallery
+- Drag and drop any images you want and reorder them as necesarry.
 - Save it!
 
-As easy as that. Now, you have a gallery. It's time to use it.
+<a name="displaygallery"></a>
+## Display a gallery 
 
-<a name="gallerieslist"></a>
-## Galleries List
-You can create a Galleries Page using this component. Just include the Galleries component
+### For CMS pages
 
-```
-[Galleries]
-galleryOrder = "random"
-results = 10
-galleryPage = "gallery"
-==
-```
-The component inject the the `galleries` object which contains all the galleries available.
+Drop the `Gallery` component into your page. Edit the `Select the gallery` option, if you want to display a specific gallery.
 
-Use a foreach loop to access each gallery with it's propertys.
+If you you want to load a dynamic gallery depending the on the url, specify the `Gallery slug` and leave `Select the gallery` set to the default `Using gallery slug`. For example, creating a CMS page with the URL `/gallery/:slug` and including the `Gallery` component with the slug `Gallery slug` set to `:slug` will display the `Test` gallery when visiting the url `/gallery/test`.
 
-`gallery.images` All the images in the gallery
+### For static pages
 
-`gallery.image[0].path` The path to the image 0 in the gallery (good for the thumbnail)
+Drop the `Gallery` snippet into your static page.  Edit the `Select the gallery` option to choose the gallery to display.
 
-`gallery.url` The url to the gallery page
+### For static pages as a custom data type (Form Widget)
 
-Here is an example to create a galleries index
-```
+Include a custom field in a static page layout as follows:
 
-{% for gallery in galleries %}
-  <div class="item">
-    <figure">
-      <img src="{{ gallery.images[0].path }}" alt="{{gallery.name}}" />
-      <h3>{{gallery.name}}</h3>
-      <a href="{{gallery.url}}"></a>
-    </figure>
-  </div>
-{% endfor %}
+    {variable name="galleryId" label="Gallery" tab="Gallery" type="gallery" placement="primary"}{/variable}
 
-```
+This will render a gallery picker when this layout is used by the user. The variable can then be passed on to render the actual gallery. (See CMS pages above)
 
-<a name="displayown"></a>
-## Display a gallery with your own style
-To do this, just include the gallery component in your page/partial.
+### For blog posts
 
-Select the gallery you want to display using the gallery name or the slug parameter and select **Use style created by the user** in the Gallery style to display option
+Blog posts can be linked up with one or more galleries on the `Galleries` tab when creating or editing a blog post. Information about connected galleries can then be accessed though the `post.gallery` variable inside your page.
 
-Then the plugin will inject the following object
+<a name="displaygallerieslist"></a>
+## Display a list of available galleries 
 
-	gallery
+### For CMS pages
 
-And the images will be in
+Drop the `galleries` component into your page. Edit `Gallery order` and `Results per page` as needed.
 
-	gallery.images
+### For static pages
 
-So, you can use it like this (using your own structure and styles of course, that's the idea...)
+Drop the `galleries` snippet into your static page. Edit `Gallery order` and `Results per page` as needed.
 
-```
-[Gallery]
-idGallery = 0
-markup = "user"
-slug = "{{ :slug }}"
-==
-<div class="wrapper">
-	<h3>{{gallery.name}}</h3>
-	<div class="cp-sidebar-content gallery">
-		<ul>
-		{% for image in gallery.images %}
-			<li>
-			<img title="{{image.title}}" alt="{{image.description}}" src="{{ image.path }}"></a>
-			</li>
-		{% endfor %}
-		</ul>
-	</div>
-</div>
-```
+<a name="futurefeatures"></a>
+## Future Features / In the pipeline
 
-<a name="displaycomponent"></a>
-##Display gallery with the component included
+* Pagination for the galleries list
+* German and Dutch Localisation
 
-To do this, just include the gallery component in your page/partial.
-
-Choose the gallery you want to display and select **Use the style included in the component** in the Gallery style to display option
-
-Then, in your page / partial insert the component
-
-	{% component 'Gallery' %}
-
-This will inject the next scripts
-- Owl Carousel (Js and CSS)
-- pz.js - Scritp for initialize the gallery carousel
-
-Use this option just in an emergency, because it doesn't have too many styles and maybe the carousel is not what you need. I recommend you use the "own style" option because it offers you more flexibility.
-
-
-<a name="gallerypost"></a>
-##Linking a gallery to a blog post and display it
-
-Once you have a gallery created, you can link it to a Blog Post ([RainLab Blog](https://octobercms.com/plugin/rainlab-blog)).
-
-To do this, just go to edit your blog and find the **Galleries** tab. There you will see all the galleries created, choose one (or many, it's your call) and save it.
-
-**You don't need to add any component to your pages / partials**, just use the Gallery objet as a other Blog property. Here is a suggested example:
-
-```
-{% if post.gallery.count != 0 %} /* Check if a gallery is attached to your blog post*/
-	{% for gallery in post.gallery) %}
-		<div class="wrapper-gallery">
-			<h3>{{gallery.name}}</h3>
-				<div class="gallery-itemscontent">
-					<div id="gallery_in_post" class="owl-carousel owl-theme">
-						{% for image in gallery.images %}
-						<div class="item">
-							<img src="{{ image.path }}" alt="">
-						</div>
-						{% endfor %}
-					</div>
-				</div>
-			</div>
-	{% endfor %}
-{% endif %}
-
-```
 <a name="support"></a>
-##Help and support
+## Help & support
 
-If you find some bugs or have questions, you can leave a message in the forum or [GitHub](https://github.com/sanPuerquitoProgramador/simple-awesome-gallery)
+If you find some bugs please open a ticket on [GitHub](https://github.com/sqwk/oct-gallery)
