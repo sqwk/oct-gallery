@@ -10,7 +10,7 @@ use RainLab\Blog\Models\Post as PostModel;
  */
 class Plugin extends PluginBase
 {
-    public $require = ['RainLab.Blog'];
+    public $require = [];
 
     public function registerSettings()
     {
@@ -44,32 +44,32 @@ class Plugin extends PluginBase
         ];
     }
 
-    public function boot()
-    {
-        PostModel::extend(function ($model) {
-            $model->belongsToMany['gallery'] = [
-                'Sqwk\Gallery\Models\Gallery',
-                'table'    => 'sqwk_gallery_galleries_posts',
-                'key'      => 'post_id',
-                'otherKey' => 'gallery_id'
-            ];
-        });
+    public function boot(){
+        if (PluginManager::instance()->hasPlugin('RainLab.Blog')) {
+            $this->require[] = 'RainLab.Blog';
 
-        PostsController::extendFormFields(function ($form, $model) {
-            if (!$model instanceof PostModel) {
-                return;
-            }
-            if (!$model->exists) {
-                return;
-            }
+            PostModel::extend(function($model){
+                $model->belongsToMany['gallery'] = [
+                    'Sqwk\Gallery\Models\Gallery',
+                    'table'    => 'sqwk_gallery_galleries_posts',
+                    'key'      => 'post_id',
+                    'otherKey' => 'gallery_id'
+                ];
+            });
 
-            $form->addSecondaryTabFields([
-                'gallery' => [
-                    'label' => 'sqwk.gallery::lang.form.label',
-                    'tab' => 'sqwk.gallery::lang.form.tab',
-                    'type' => 'relation'
-                ]
-            ]);
-        });
+            PostsController::extendFormFields(function($form, $model){
+
+                if(!$model instanceof PostModel) return;
+                if (!$model->exists) return;
+
+                $form->addSecondaryTabFields([
+                    'gallery' => [
+                        'label' => 'sqwk.gallery::lang.form.label',
+                        'tab' => 'sqwk.gallery::lang.form.tab',
+                        'type' => 'relation'
+                    ]
+                ]);
+            });
+        }
     }
 }
