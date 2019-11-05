@@ -57,6 +57,18 @@ class Plugin extends PluginBase
         ];
     }
 
+    /**
+     * Registers any form widgets for use in backend
+     *
+     * @return array
+     */
+    public function registerFormWidgets()
+    {
+        return [
+            'Pollozen\Simplegallery\FormWidgets\Gallery' => 'gallery',
+        ];
+    }
+
     public function boot(){
         if (PluginManager::instance()->hasPlugin('RainLab.Blog')) {
             $this->require[] = 'RainLab.Blog';

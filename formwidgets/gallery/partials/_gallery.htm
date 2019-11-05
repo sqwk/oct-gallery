@@ -1,0 +1,24 @@
+<?php if ($this->previewMode): ?>
+
+    <div class="form-control">
+        <?= $value ?>
+    </div>
+
+<?php else: ?>
+    <!-- TODO Ajax auto complete functionality -->
+    <select
+        id="<?= $this->getId('input') ?>"
+        name="<?= $name ?>"
+        value="<?= $value ?>"
+        class="form-control">
+        <option value="" disabled>Select a Gallery</option>
+        <?php foreach ($data as $option): ?>
+            <option
+                <?= $value === $option->slug ? 'selected="selected"' : '' ?>
+                value="<?= $option->slug ?>" >
+                    <?= $option->description ? $option->name.': '.$option->description : $option->name  ?>
+            </option>
+        <?php endforeach ?>
+    </select>
+
+<?php endif ?>
