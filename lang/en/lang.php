@@ -5,13 +5,16 @@
             'description' => 'Simple admin UI for managing and sorting galleries',
             'permission' => 'Manage Galleries'
         ],
+        'sidemenu' =>[
+            'galleries' => 'Galleries'
+        ],
         'form' => [
             'label' => 'Select one or more galleries for attach to the post ',
             'tab' => 'Galleries'
         ],
         'gallerycomponent' => [
             'name' => 'Gallery',
-            'description' => 'Displays a gallery on the page, specifying the gallery name or using url slug parameter',
+            'description' => 'Display a single gallery.',
             'property' =>[
                 'gallery' => 'Select the gallery',
                 'galleryDescription' => 'Select a specific gallery or retrieve dinamically using the slug gallery',
@@ -22,7 +25,7 @@
         ],
         'galleriescomponent' =>[
             'name' => 'Galleries',
-            'description' => 'Display a list of galleries',
+            'description' => 'Display a list of all available galleries',
             'property' => [
                 'order' => 'Gallery order',
                 'orderDescription' => 'Attribute in wich the galleries should be orderer',

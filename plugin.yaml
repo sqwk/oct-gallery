@@ -10,13 +10,13 @@ permissions:
         label: 'sqwk.gallery::lang.plugin.permission'
 navigation:
     gallery:
-        label: 'Gallery'
+        label: 'sqwk.gallery::lang.plugin.name'
         url: sqwk/gallery/gallery
         icon: icon-picture-o
         permissions:
             - sqwk.gallery.manage_galleries
         sideMenu:
             headlines:
-                label: Gallery
+                label: 'sqwk.gallery::lang.sidemenu.galleries'
                 url: sqwk/gallery/gallery
                 icon: icon-picture-o

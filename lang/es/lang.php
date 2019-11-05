@@ -5,13 +5,16 @@
             'description' => 'Simple admin UI for managing and sorting galleries',
             'permission' => 'Manejar gallerías'
         ],
+        'sidemenu' =>[
+            'galleries' => 'Galleries'
+        ],
         'form' => [
             'label' => 'Selecciona una o más galaerías para integrarlas a la publicación',
             'tab' => 'Galerías'
         ],
         'gallerycomponent' => [
             'name' => 'Galería',
-            'description' => 'Muestra una galería en la página especificando el nombre de la galería o utilizando el parámetro slug',
+            'description' => 'Muestra una galería',
             'property' =>[
                 'gallery' => 'Selecciona la galería',
                 'galleryDescription' => 'Selcciona una galería en especifico u obtenla dinámicamente utilizando el slug de la galería',
