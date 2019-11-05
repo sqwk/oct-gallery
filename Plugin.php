@@ -66,7 +66,7 @@ class Plugin extends PluginBase
     public function registerFormWidgets()
     {
         return [
-            'Pollozen\Simplegallery\FormWidgets\Gallery' => 'gallery',
+            'Sqwk\Gallery\FormWidgets\Gallery' => 'gallery',
         ];
     }
 
