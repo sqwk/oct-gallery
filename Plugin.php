@@ -2,6 +2,7 @@
 
 use Backend;
 use System\Classes\PluginBase;
+use System\Classes\PluginManager;
 use RainLab\Blog\Controllers\Posts as PostsController;
 use RainLab\Blog\Models\Post as PostModel;
 
