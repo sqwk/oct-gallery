@@ -44,6 +44,19 @@ class Plugin extends PluginBase
         ];
     }
 
+    /**
+     * Registers any front-end components implemented in this plugin as snippets for the static pages plugin.
+     *
+     * @return array
+     */
+    public function registerPageSnippets()
+    {
+        return [
+            'Sqwk\Gallery\Components\Gallery' => 'Gallery',
+            'Sqwk\Gallery\Components\Galleries' => 'Galleries',
+        ];
+    }
+
     public function boot(){
         if (PluginManager::instance()->hasPlugin('RainLab.Blog')) {
             $this->require[] = 'RainLab.Blog';
