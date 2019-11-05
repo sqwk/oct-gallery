@@ -6,25 +6,25 @@
 name: Gallery
 
 # Model Form Field configuration
-form: $/pollozen/simplegallery/models/gallery/fields.yaml
+form: $/sqwk/gallery/models/gallery/fields.yaml
 
 # Model Class name
-modelClass: PolloZen\SimpleGallery\Models\Gallery
+modelClass: Sqwk\Gallery\Models\Gallery
 
 # Default redirect location
-defaultRedirect: pollozen/simplegallery/gallery
+defaultRedirect: sqwk/gallery/gallery
 
 # Create page
 create:
     title: Create Gallery
-    redirect: pollozen/simplegallery/gallery/update/:id
-    redirectClose: pollozen/simplegallery/gallery
+    redirect: sqwk/gallery/gallery/update/:id
+    redirectClose: sqwk/gallery/gallery
 
 # Update page
 update:
     title: Edit Gallery
-    redirect: pollozen/simplegallery/gallery
-    redirectClose: pollozen/simplegallery/gallery
+    redirect: sqwk/gallery/gallery
+    redirectClose: sqwk/gallery/gallery
 
 # Preview page
 preview:

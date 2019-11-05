@@ -1,16 +1,16 @@
 columns:
     name:
-        label: pollozen.simplegallery::lang.column.name
+        label: sqwk.gallery::lang.column.name
         type: text
         searchable: true
         sorteable: true
     description:
-        label: pollozen.simplegallery::lang.column.description
+        label: sqwk.gallery::lang.column.description
         type: text
         searchable: true
         sorteable: true
     created_at:
-        label: pollozen.simplegallery::lang.column.created
+        label: sqwk.gallery::lang.column.created
         type: datetime
         searchable: true
         sorteable: true

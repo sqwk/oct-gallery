@@ -3,16 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list: $/pollozen/simplegallery/models/gallery/columns.yaml
+list: $/sqwk/gallery/models/gallery/columns.yaml
 
 # Model Class name
-modelClass: PolloZen\SimpleGallery\Models\Gallery
+modelClass: Sqwk\Gallery\Models\Gallery
 
 # List Title
 title: Manage Galleries
 
 # Link URL for each record
-recordUrl: pollozen/simplegallery/gallery/update/:id
+recordUrl: sqwk/gallery/gallery/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records

@@ -1,4 +1,4 @@
-<?php namespace PolloZen\SimpleGallery\Models;
+<?php namespace Sqwk\Gallery\Models;
 
 use Model;
 
@@ -12,7 +12,7 @@ class Gallery extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'pollozen_simplegallery_galleries';
+    public $table = 'sqwk_gallery_galleries';
 
     /**
      * @var array Guarded fields
@@ -34,8 +34,8 @@ class Gallery extends Model
 
     public $belongsToMany = [
         'post' => [
-            'RainLab\Blog\Models\Post',
-            'table' => 'pollozen_simplegallery_galleries_posts'
+                'RainLab\Blog\Models\Post',
+                'table' => 'sqwk_gallery_galleries_posts'
             ]
         ];
 
@@ -45,6 +45,6 @@ class Gallery extends Model
             'id' => $this->id,
             'slug' => $this->slug
         ];
-        return $this->url = $controller->pageUrl($pageName,$params);
+        return $this->url = $controller->pageUrl($pageName, $params);
     }
 }

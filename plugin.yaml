@@ -1,22 +1,22 @@
 plugin:
-    name: 'pollozen.simplegallery::lang.plugin.name'
-    description: 'pollozen.simplegallery::lang.plugin.description'
-    author: PolloZen
+    name: 'sqwk.gallery::lang.plugin.name'
+    description: 'sqwk.gallery::lang.plugin.description'
+    author: sqwk
     icon: oc-icon-picture-o
     homepage: ''
 permissions:
-    pollozen.simplegallery.manage_galleries:
-        tab: 'pollozen.simplegallery::lang.plugin.name'
-        label: 'pollozen.simplegallery::lang.plugin.permission'
+    sqwk.gallery.manage_galleries:
+        tab: 'sqwk.gallery::lang.plugin.name'
+        label: 'sqwk.gallery::lang.plugin.permission'
 navigation:
-    simplegallery:
+    gallery:
         label: 'Gallery'
-        url: pollozen/simplegallery/gallery
+        url: sqwk/gallery/gallery
         icon: icon-picture-o
         permissions:
-            - pollozen.simplegallery.manage_galleries
+            - sqwk.gallery.manage_galleries
         sideMenu:
             headlines:
                 label: Gallery
-                url: pollozen/simplegallery/gallery
+                url: sqwk/gallery/gallery
                 icon: icon-picture-o

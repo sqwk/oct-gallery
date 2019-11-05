@@ -1,9 +1,9 @@
 <?php
     return [
         'plugin' => [
-            'name'        => 'Simple Awesome Gallery',
-            'description' => 'Gallería con integración al Blog de RainLab',
-            'permission' => 'Manage Galleries in a easy way'
+            'name'        => 'Gallery',
+            'description' => 'Simple admin UI for managing and sorting galleries',
+            'permission' => 'Manejar gallerías'
         ],
         'form' => [
             'label' => 'Selecciona una o más galaerías para integrarlas a la publicación',
@@ -16,10 +16,6 @@
                 'gallery' => 'Selecciona la galería',
                 'galleryDescription' => 'Selcciona una galería en especifico u obtenla dinámicamente utilizando el slug de la galería',
                 'gallerySlug' => 'Usar el slug de la galería',
-                'style' => 'Estilo de la galería',
-                'styleComponent' => 'Usar el estilo incluido en el componente',
-                'styleUser' => 'Usar un estilo creado por el usuario',
-                'styleDescription' => 'El estilo incluido en el componente usa Owl Carousel para crear un slide con las imágenes de la galería',
                 'slug' => 'Slug de la galería',
                 'slugDescription' => ''
             ]
@@ -47,4 +43,3 @@
             'images' => 'Arrastra y suelta las imágenes aquí'
         ]
     ];
-?>

@@ -1,7 +1,7 @@
 fields:
     name:
         span: auto
-        label: pollozen.simplegallery::lang.column.name
+        label: sqwk.gallery::lang.column.name
         required: true
     slug:
         span: auto
@@ -10,8 +10,8 @@ fields:
         required: true
     description:
         span: full
-        label: pollozen.simplegallery::lang.column.description
+        label: sqwk.gallery::lang.column.description
     images:
-      label: pollozen.simplegallery::lang.column.images
+      label: sqwk.gallery::lang.column.images
       type: fileupload
       mode: image

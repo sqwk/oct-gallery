@@ -1,20 +1,21 @@
-{% set markup = __SELF__.galleryMarkup %}
-{% set gallery = __SELF__.gallery %}
-{% if markup == "plugin" %}
-	<div class="container">
-		<div class="row">
-			<div class="col-md-8">
-				<div class="gallery-container">
-					<h3>{{gallery.name}}</h3><br/>
-					<div class="gallery_in_post owl-carousel owl-theme">
-						{% for image in gallery.images %}
-						<div class="item">
-							<img title="{{image.title}}" src="{{ image.path }}" alt="">
-						</div>
-						{% endfor %}
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-{%endif%}
+<div class="gallery">
+	<h3>{{gallery.name}}</h3>
+	<ul class="images">
+		{% for image in gallery.images %}
+			<li>
+				<figure>
+					{% if image.title %}
+	                    <img title="{{image.title}}" src="{{ image.path }}" alt="">
+						{% if image.description %}
+    	                	<figcaption>{{image.title}}: {{image.description}}</figcaption>
+						{% else %}
+    	                	<figcaption>{{image.title}}</figcaption>
+						{% endif %}
+					{% else %}
+						<img src="{{ image.path }}" alt="">
+					{% endif %}
+                </figure>
+			</li>
+		{% endfor %}
+	</ul>
+</div>

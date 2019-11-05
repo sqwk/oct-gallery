@@ -1,17 +1,12 @@
-{% set markup = __SELF__.galleryMarkup %}
-{% set galleries = __SELF__.galleries %}
-{% if markup == "plugin" %}
-<div class="cp-gallery-masonry isotope">
-  <div class="isotope items">
-{% for gallery in galleries %}
-  <div class="item">
-    <figure class="toGallery">
-      <img src="{{ gallery.images[0].path | resize(263) }}" alt="{{Gallery.simpleGallery.name}}" /><i class="ion-android-arrow-forward"></i>
-      <h3>{{gallery.name}}</h3>
-      <a href="{{gallery.url}}"></a>
-    </figure>
-  </div>
-{% endfor %}
-  </div>
-</div>
-{% endif %}
+<ul class="galleries">
+    {% for gallery in galleries %}
+        <li>
+            <a href="{{gallery.url}}">
+                <figure>
+                    <img src="{{ gallery.images[0].path }}" alt="{{gallery.name}}" />
+                    <figcaption>{{gallery.name}}</figcaption>
+                </figure>
+            </a>
+        </li>
+    {% endfor %}
+</ul>
