@@ -53,7 +53,7 @@ class Plugin extends PluginBase
     public function registerPageSnippets()
     {
         return [
-            'Sqwk\Gallery\Components\GalleryStatic' => 'Gallery',
+            'Sqwk\Gallery\Components\Gallery' => 'Gallery',
             'Sqwk\Gallery\Components\Galleries' => 'Galleries',
         ];
     }
