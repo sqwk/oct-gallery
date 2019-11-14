@@ -14,6 +14,7 @@
 * Gallery snippets for manual placement inside CMS and [static](https://octobercms.com/plugin/rainlab-pages) pages
 * Link one or more galleries to a [blog post](https://octobercms.com/plugin/rainlab-blog)
 * Form widget for use in custom layouts
+* Automatic image resizing using [ImageResizer](https://octobercms.com/plugin/toughdeveloper-imageresizer) if it is installed.
 
 This plugin is largely based on [SimpleGallery by PolloZen](https://octobercms.com/plugin/pollozen-simplegallery).
 
@@ -37,9 +38,13 @@ Drop the `Gallery` component into your page. Edit the `Select the gallery` optio
 
 If you you want to load a dynamic gallery depending the on the url, specify the `Gallery slug` and leave `Select the gallery` set to the default `Using gallery slug`. For example, creating a CMS page with the URL `/gallery/:slug` and including the `Gallery` component with the slug `Gallery slug` set to `:slug` will display the `Test` gallery when visiting the url `/gallery/test`.
 
+If [ImageResizer](https://octobercms.com/plugin/toughdeveloper-imageresizer) is installed, you can specify a `Max Dimension` for the gallery. This will automatically downsize original images to the longest side width/height. If the additional plugin is not installed, original images will be used.
+
 ### For static pages
 
-Drop the `Gallery` snippet into your static page.  Edit the `Select the gallery` option to choose the gallery to display.
+Drop the `Gallery` snippet into your static page.  Edit the `Select the gallery` option to choose the gallery to display. Ignore the `Gallery slug` option.
+
+If ImageResizer is installed, you can specify a `Max Dimension` for the gallery. (See CMS pages above)
 
 ### For static pages as a custom data type (Form Widget)
 
