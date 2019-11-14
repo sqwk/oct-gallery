@@ -20,7 +20,9 @@
                 'galleryDescription' => 'Select a specific gallery or retrieve dinamically using the slug gallery',
                 'gallerySlug' => 'Use gallery slug',
                 'slug' => 'Gallery slug',
-                'slugDescription' => ''
+                'slugDescription' => '',
+                'maxDimension' => 'Max Dimension',
+                'maxDimensionDescription' => 'The length of the longest side of images if Image Resizer is installed'
             ]
         ],
         'galleriescomponent' =>[
@@ -36,7 +38,7 @@
                 'orderRandom' => 'Randomize',
                 'results' => 'Results per page',
                 'page' => 'Gallery page',
-                'pageDescription' => 'Page where a single gallery will be displayed. This attribute is used for create a link to the gallery',
+                'pageDescription' => 'Page where a single gallery will be displayed. This attribute is used for create a link to the gallery'
             ]
         ],
         'column' => [

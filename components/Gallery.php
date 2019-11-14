@@ -1,12 +1,15 @@
 <?php namespace Sqwk\Gallery\Components;
 
 use Cms\Classes\ComponentBase;
+use System\Classes\PluginManager;
+
 use Sqwk\Gallery\Models\Gallery as GalleryModel;
 
 class Gallery extends ComponentBase
 {
     public $gallery;
-    public $galleryMarkup;
+
+    public $imageResizerInstalled = false;
 
     public function componentDetails()
     {
@@ -18,7 +21,7 @@ class Gallery extends ComponentBase
 
     public function defineProperties()
     {
-        return [
+        $properties = [
             'idGallery' => [
                 'title'         => 'sqwk.gallery::lang.gallerycomponent.property.gallery',
                 'description'   => 'sqwk.gallery::lang.gallerycomponent.property.galleryDescription',
@@ -32,6 +35,19 @@ class Gallery extends ComponentBase
                 'default' => '{{ :slug }}'
             ]
         ];
+
+        if (PluginManager::instance()->hasPlugin('ToughDeveloper.ImageResizer')) {
+            $this->imageResizerInstalled = true;
+            $properties['maxDimension'] = [
+                'title'         => 'sqwk.gallery::lang.gallerycomponent.property.maxDimension',
+                'description'   => 'sqwk.gallery::lang.gallerycomponent.property.maxDimensionDescription',
+                'type'          => 'string',
+                'default'       => '640',
+                'showExternalParam' => false
+            ];
+        }
+
+        return $properties;
     }
 
     public function getidGalleryOptions()
@@ -41,13 +57,7 @@ class Gallery extends ComponentBase
 
     public function onRun()
     {
-        $this->prepareMarkup();
         $this->gallery = $this->page['gallery'] = $this->getGallery();
-    }
-
-    private function prepareMarkup()
-    {
-        $this->galleryMarkup = $this->property('markup');
     }
 
     protected function getGallery()

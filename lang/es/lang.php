@@ -20,7 +20,9 @@
                 'galleryDescription' => 'Selcciona una galería en especifico u obtenla dinámicamente utilizando el slug de la galería',
                 'gallerySlug' => 'Usar el slug de la galería',
                 'slug' => 'Slug de la galería',
-                'slugDescription' => ''
+                'slugDescription' => '',
+                'maxDimension' => 'Max Dimension',
+                'maxDimensionDescription' => 'The length of the longest side of images if Image Resizer is installed'
             ]
         ],
         'galleriescomponent' =>[
