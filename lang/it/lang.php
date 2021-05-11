@@ -44,5 +44,5 @@ return [
         "name" => "Galleria",
         "permission" => "Gestione gallerie"
     ],
-    "sidemenu" => ["galleries" => ""]
+    "sidemenu" => ["galleries" => "Gallerie"]
 ];
