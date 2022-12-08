@@ -22,7 +22,7 @@
                 'slug' => 'Gallery slug',
                 'slugDescription' => '',
                 'maxDimension' => 'Max Dimension',
-                'maxDimensionDescription' => 'The length of the longest side of images if Image Resizer is installed'
+                'maxDimensionDescription' => 'The length of the longest side of images'
             ]
         ],
         'galleriescomponent' =>[

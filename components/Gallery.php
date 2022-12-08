@@ -9,8 +9,6 @@ class Gallery extends ComponentBase
 {
     public $gallery;
 
-    public $imageResizerInstalled = false;
-
     public function componentDetails()
     {
         return [
@@ -28,24 +26,20 @@ class Gallery extends ComponentBase
                 'type'          => 'dropdown',
                 'showExternalParam' => false
             ],
-            'slug'  =>[
+            'slug' => [
                 'title' => 'sqwk.gallery::lang.gallerycomponent.property.slug',
                 'description' => 'sqwk.gallery::lang.gallerycomponent.property.slugDescription',
                 'type' => 'string',
                 'default' => '{{ :slug }}'
-            ]
-        ];
-
-        if (PluginManager::instance()->hasPlugin('ToughDeveloper.ImageResizer')) {
-            $this->imageResizerInstalled = true;
-            $properties['maxDimension'] = [
+            ],
+            'maxDimension' => [
                 'title'         => 'sqwk.gallery::lang.gallerycomponent.property.maxDimension',
                 'description'   => 'sqwk.gallery::lang.gallerycomponent.property.maxDimensionDescription',
                 'type'          => 'string',
-                'default'       => '640',
+                'default'       => '0',
                 'showExternalParam' => false
-            ];
-        }
+            ]
+        ];
 
         return $properties;
     }

@@ -3,7 +3,7 @@
 		<li>
 			{% if image.title %}
 				<figure>
-					{% if __SELF__.imageResizerInstalled %}
+					{% if __SELF__.property('maxDimension') != 0 %}
 						<img title="{{image.title}}" src="{{image.path|resize(__SELF__.property('maxDimension'))}}" alt="">
 					{% else %}
 						<img title="{{image.title}}" src="{{image.path}}" alt="">
@@ -15,7 +15,7 @@
 					{% endif %}
 				</figure>
 			{% else %}
-				{% if __SELF__.imageResizerInstalled %}
+				{% if __SELF__.property('maxDimension') != 0 %}
 					<img src="{{image.path|resize(__SELF__.property('maxDimension'))}}" alt="">
 				{% else %}
 					<img src="{{image.path}}" alt="">
