@@ -1,3 +1,5 @@
+1.1.1:
+  - Added composer.json for marketplace updates
 1.1.0:
   - October 3.0 compatibility, removal of ImageResizer dependency and Italian localisation
 1.0.1:
