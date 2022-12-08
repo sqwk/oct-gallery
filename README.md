@@ -14,9 +14,9 @@
 * Gallery snippets for manual placement inside CMS and [static](https://octobercms.com/plugin/rainlab-pages) pages
 * Link one or more galleries to a [blog post](https://octobercms.com/plugin/rainlab-blog)
 * Form widget for use in custom layouts
-* Automatic image resizing using [ImageResizer](https://octobercms.com/plugin/toughdeveloper-imageresizer) if it is installed.
+* Automatic image resizing.
 
-This plugin is largely based on [SimpleGallery by PolloZen](https://octobercms.com/plugin/pollozen-simplegallery).
+This plugin is largely based on SimpleGallery by PolloZen.
 
 This plugin does NOT include any CSS or Javascript, leaving any styling and animation up to the developer. The plugin renders clean unordered lists unless overriden.
 
