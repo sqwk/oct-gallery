@@ -1,0 +1,8 @@
+{
+    "name": "sqwk/gallery-plugin",
+    "type": "october-plugin",
+    "description": "Simple admin UI for managing and sorting galleries",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}
