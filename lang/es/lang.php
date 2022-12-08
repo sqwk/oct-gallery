@@ -21,8 +21,8 @@
                 'gallerySlug' => 'Usar el slug de la galería',
                 'slug' => 'Slug de la galería',
                 'slugDescription' => '',
-                'maxDimension' => 'Max Dimension',
-                'maxDimensionDescription' => 'The length of the longest side of images if Image Resizer is installed'
+                'maxDimension' => 'Max dimensión',
+                'maxDimensionDescription' => 'La longitud del lado más largo de las imágenes.'
             ]
         ],
         'galleriescomponent' =>[

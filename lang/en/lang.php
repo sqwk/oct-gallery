@@ -5,7 +5,7 @@
             'description' => 'Simple admin UI for managing and sorting galleries',
             'permission' => 'Manage Galleries'
         ],
-        'sidemenu' =>[
+        'sidemenu' => [
             'galleries' => 'Galleries'
         ],
         'form' => [
@@ -38,7 +38,7 @@
                 'orderRandom' => 'Randomize',
                 'results' => 'Results per page',
                 'page' => 'Gallery page',
-                'pageDescription' => 'Page where a single gallery will be displayed. This attribute is used for create a link to the gallery'
+                'pageDescription' => 'Page where a single gallery will be displayed. This attribute is used for create a link to the gallery.'
             ]
         ],
         'column' => [
