@@ -1,10 +1,11 @@
+_**Depreceated:** While this plugin is fully functional, it won't be developed further. The functionality that this plugin offers can be obtained through [tailor](https://docs.octobercms.com/3.x/cms/tailor/introduction.html) and the [mediafinder](https://docs.octobercms.com/3.x/element/form/widget-mediafinder.html) or [file upload](https://docs.octobercms.com/3.x/element/form/widget-fileupload.html) field types._
+
 # Simple Gallery
 
 - [Introduction](#introduction)
 - [Create galleries](#creategalleries)
 - [Display a gallery](#displaygallery)
 - [Display a list of available galleries](#displaygallerieslist)
-- [Future features](#futurefeatures)
 - [Help & support](#support)
 
 <a name="introduction"></a>
@@ -74,12 +75,6 @@ When the `Max Dimension` property is used for the `Gallery`  component, all gall
 ## Overriding the Component Template
 
 You can expand and edit the component templates if a different resizing logic is needed (for example with more options) or if you want to use your own markup.  Right click on the `{% component %}` tag and click `Expand Component Partial`. (Also see [Customizing Default Markup](https://docs.octobercms.com/3.x/cms/themes/components.html#customizing-default-markup))
-
-<a name="futurefeatures"></a>
-## Future Features / In the pipeline
-
-* Pagination for the galleries list
-* German and Dutch Localisation
 
 <a name="support"></a>
 ## Help & support
